@@ -66,10 +66,6 @@ app.post("/api/shorturl/new", async (req, res, next) => {
 	}
 });
 
-app.get("/api/hello", (req, res) => {
-	res.json({ greeting: "hello API" });
-});
-
 app.listen(port, () => {
 	console.log("Node.js listening ...");
 });
