@@ -34,9 +34,8 @@ app.get("/api/shorturl/:shortUrl", async (req, res, next) => {
 	try {
 		const shortUrl = await URL.findById(req.params.shortUrl);
 		if (shortUrl) res.redirect(`${shortUrl.originalUrl}`);
-		else res.status(404).send("404: The URL you provided does not exist.");
 	} catch (error) {
-		console.log(error);
+		res.status(404).send("404: The URL you provided does not exist.");
 	}
 });
 
