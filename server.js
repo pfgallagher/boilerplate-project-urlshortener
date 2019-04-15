@@ -30,7 +30,7 @@ app.get("/", (req, res) => {
 	res.sendFile(`${process.cwd()}/views/index.html`);
 });
 
-app.get("/api/:shortUrl", async (req, res, next) => {
+app.get("/api/shorturl/:shortUrl", async (req, res, next) => {
 	try {
 		const shortUrl = await URL.findById(req.params.shortUrl);
 		if (shortUrl) res.redirect(`${shortUrl.originalUrl}`);
